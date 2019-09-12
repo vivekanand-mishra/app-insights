@@ -75,6 +75,7 @@
                             <!-- Allow the processing of SCR annotations via a bnd plugin -->
                             org.apache.felix.scrplugin.bnd.SCRDescriptorBndPlugin;destdir=${project.build.outputDirectory}
                         </_plugin>
+						<Embed-Dependency>com.microsoft.applicationinsights</Embed-Dependency>
                     </instructions>
                 </configuration>
                 <dependencies>
@@ -98,7 +99,6 @@
     </build>
 
     <dependencies>
-        <!-- OSGi Dependencies -->
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
@@ -167,6 +167,12 @@
         <dependency>
             <groupId>uk.org.lidalia</groupId>
             <artifactId>slf4j-test</artifactId>
+        </dependency>
+		
+		<dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>applicationinsights-web</artifactId>
+			<version>2.2.0</version>
         </dependency>
     </dependencies>
 </project>
