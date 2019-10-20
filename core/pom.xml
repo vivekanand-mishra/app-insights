@@ -62,7 +62,9 @@
                         <Import-Package>
                             javax.inject;version=0.0.0,
                             javax.annotation;version=0.0.0,
-                            *
+							!com.microsoft.applicationinsights.core.*
+							!com.microsoft.applicationinsights.agent.*
+							com.microsoft.applicationinsights.*
                         </Import-Package>
                         <Sling-Model-Packages>
                             com.insights.sample.core
@@ -75,7 +77,8 @@
                             <!-- Allow the processing of SCR annotations via a bnd plugin -->
                             org.apache.felix.scrplugin.bnd.SCRDescriptorBndPlugin;destdir=${project.build.outputDirectory}
                         </_plugin>
-						<Embed-Dependency>com.microsoft.applicationinsights</Embed-Dependency>
+						<Embed-Dependency>applicationinsights-web</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
                     </instructions>
                 </configuration>
                 <dependencies>
@@ -172,7 +175,8 @@
 		<dependency>
             <groupId>com.microsoft.azure</groupId>
             <artifactId>applicationinsights-web</artifactId>
-			<version>2.2.0</version>
+			<version>2.5.0</version>
+			<scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
