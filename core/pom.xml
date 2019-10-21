@@ -62,8 +62,12 @@
                         <Import-Package>
                             javax.inject;version=0.0.0,
                             javax.annotation;version=0.0.0,
-							!com.microsoft.applicationinsights.core.*
-							!com.microsoft.applicationinsights.agent.*
+							org.osgi.service.event.*,
+							org.slf4j.*,org.apache.sling.*,
+							javax.servlet.*,
+							com.microsoft.applicationinsights.internal.channel.common.*,
+							!com.microsoft.applicationinsights.core.*,
+							!com.microsoft.applicationinsights.agent.*,
 							com.microsoft.applicationinsights.*
                         </Import-Package>
                         <Sling-Model-Packages>
